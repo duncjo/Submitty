@@ -59,7 +59,7 @@ remove_json_comments: customization.json
 	python $(GRADING_DIRECTORY)/json_syntax_checker.py customization_no_comments.json
 	grep '{"file":' customization_no_comments.json > iclicker_file_list.txt || true
 	chmod u+x ${RAINBOW_GRADES_DIRECTORY}/parsexml.py
-	python ${RAINBOW_GRADES_DIRECTORY}/parsexml.py iclicker_file_list.txt
+	${RAINBOW_GRADES_DIRECTORY}/parsexml.py iclicker_file_list.txt
 
 compile:  remove_json_comments
 	g++ -Wall ${flags} ${memory_flags} \
